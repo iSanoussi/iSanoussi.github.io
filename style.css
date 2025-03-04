@@ -104,11 +104,12 @@ nav .nav-links a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .about-image img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #fff;
@@ -119,6 +120,47 @@ nav .nav-links a:hover {
 .about-image img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation circulaire autour de la photo de profil */
+.profile-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 2rem;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.profile-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: #ff6b6b;
+    animation: spin 3s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Section Services */
@@ -344,4 +386,49 @@ footer {
     .services-grid, .projects-grid {
         grid-template-columns: 1fr;
     }
+}
+/* Section Outils */
+.tools {
+    background: #f9f9f9;
+    padding: 5rem 0;
+}
+
+.tools h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tool {
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tool i {
+    font-size: 3rem;
+    color: #007BFF;
+    margin-bottom: 1rem;
+}
+
+.tool h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tool p {
+    color: #555;
 }

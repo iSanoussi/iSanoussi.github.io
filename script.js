@@ -1,8 +1,23 @@
+// Texte dynamique pour les métiers
+const dynamicText = document.getElementById('dynamic-text');
+const professions = ["Data Scientist", "Data Analyst", "Développeur Python", "Développeur SAS"];
+let index = 0;
+
+function changeProfession() {
+    dynamicText.textContent = professions[index];
+    index = (index + 1) % professions.length; // Passer au métier suivant
+}
+
+// Changer de métier toutes les 3 secondes
+setInterval(changeProfession, 3000);
+
+
 // Initialisation des animations AOS (Animate On Scroll)
 AOS.init({
     duration: 1000, // Durée des animations
     once: true, // Les animations ne se déclenchent qu'une fois
 });
+
 
 // Gestion du formulaire de contact
 const contactForm = document.getElementById('contact-form');
@@ -64,5 +79,15 @@ mobileMenu.addEventListener('click', () => {
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+    });
+});
+
+// JavaScript pour effet interactif
+document.querySelectorAll('.tool').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = "scale(1.05)";
+    });
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = "scale(1)";
     });
 });

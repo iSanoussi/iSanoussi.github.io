@@ -28,12 +28,13 @@
         </div>
     </nav>
 
-    <!-- Section Accueil -->
+    <!-- Section En-tête -->
     <section id="home" class="home">
         <div class="container">
             <div class="home-content" data-aos="fade-up">
-                <h1>Bonjour, je suis <span>Abdoul Wahid</span></h1>
-                <p>Data Analyst spécialisé dans l'analyse de données financières et le reporting stratégique.</p>
+                <!-- Texte dynamique -->
+                <h1>Bonjour, je suis <span id="dynamic-text">Data Analyst</span></h1>
+                <p>Spécialisé dans l'analyse de données, la science des données et le développement Python.</p>
                 <a href="#projects" class="btn">Voir mes projets</a>
             </div>
         </div>
@@ -51,6 +52,9 @@
                     </p>
                     <a href="#contact" class="btn">Me contacter</a>
                 </div>
+                 <!-- Photo de profil avec animation -->
+                <div class="profile-image" data-aos="fade-up">
+                <div class="profile-border"></div>
                 <div class="about-image">
                     <img src="assets/images/profile.jpg" alt="Photo de profil">
                 </div>
@@ -106,6 +110,44 @@
             </div>
         </div>
     </section>
+<!-- Section Outils -->
+<section class="tools">
+    <div class="container">
+        <h2>Outils Utilisés</h2>
+        <div class="tools-grid">
+            <div class="tool">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+                <p>Un langage de programmation puissant utilisé pour l'analyse des données et le machine learning.</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p>Une plateforme pour la gestion de version et la collaboration sur des projets de développement.</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-google"></i>
+                <h3>Google Cloud</h3>
+                <p>Des services cloud permettant de déployer des applications et gérer des données à grande échelle.</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-database"></i>
+                <h3>SQL</h3>
+                <p>Un langage de programmation pour gérer et interroger des bases de données relationnelles.</p>
+            </div>
+            <div class="tool">
+                <i class="fab fa-microsoft"></i>
+                <h3>Power BI</h3>
+                <p>Un outil de visualisation des données pour créer des rapports interactifs et des tableaux de bord.</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-cogs"></i>
+                <h3>Docker</h3>
+                <p>Une plateforme permettant de développer, déployer et exécuter des applications dans des conteneurs.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Section Projets -->
     <section id="projects" class="projects">
@@ -188,9 +230,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- Pour les animations -->
-    <script>
-        AOS.init(); // Initialisation des animations
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
