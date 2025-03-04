@@ -463,28 +463,38 @@ footer {
     }
 }
 
+.tools {
+    overflow: hidden; /* Masquer le débordement */
+    position: relative;
+    padding: 2rem 0; /* Espacement vertical */
+}
+
+.tools-wrapper {
+    overflow: hidden; /* Masquer le débordement */
+    width: 100%;
+}
+
+.tools-grid {
+    display: flex;
+    gap: 20px; /* Espace entre les outils */
+    animation: scrollHorizontal 20s linear infinite; /* Animation de défilement */
+}
+
 .tool {
-    flex: 0 0 auto;
-    width: 200px;
-    text-align: center;
-    padding: 1rem;
+    flex: 0 0 auto; /* Empêcher les éléments de rétrécir */
+    width: 250px; /* Largeur fixe pour chaque outil */
     background: #fff;
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
-.tool:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 768px) {
-    .tool {
-        width: 150px;
+@keyframes scrollHorizontal {
+    0% {
+        transform: translateX(0);
     }
-
-    .tools-scroll {
-        animation-duration: 15s;
+    100% {
+        transform: translateX(-50%); /* Défilement de 50% de la largeur totale */
     }
 }
