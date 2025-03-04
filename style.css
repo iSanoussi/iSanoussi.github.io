@@ -502,3 +502,45 @@ footer {
         width: 100%; /* Prendre toute la largeur */
     }
 }
+/* Styles généraux pour les sections */
+section {
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0; /* Bordure entre les sections */
+}
+
+section:last-child {
+    border-bottom: none; /* Supprimer la bordure pour la dernière section */
+}
+
+/* Section En-tête */
+.home {
+    background: #f4f4f4;
+    padding: 6rem 0; /* Plus d'espace pour la section en-tête */
+}
+
+/* Section Services */
+.services {
+    background: #fff;
+}
+
+/* Section Expériences */
+.experience {
+    background: #f9f9f9;
+}
+
+/* Section Outils */
+.tools {
+    background: #fff;
+}
+
+/* Section Projets */
+.projects {
+    background: #f9f9f9;
+}
+
+/* Section Contact */
+.contact {
+    background: #333;
+    color: #fff;
+}
