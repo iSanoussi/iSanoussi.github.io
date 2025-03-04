@@ -1,6 +1,6 @@
-// Texte dynamique pour les métiers
+// Animation texte dynamique
 const dynamicText = document.getElementById('dynamic-text');
-const professions = ["Data Scientist", "Data Analyst", "Développeur Python", "Développeur SAS"];
+const professions = ["Data Analyst", "Data Scientist", "Développeur Python", "Développeur SAS"];
 let index = 0;
 
 function changeProfession() {
@@ -8,8 +8,8 @@ function changeProfession() {
     index = (index + 1) % professions.length; // Passer au métier suivant
 }
 
-// Changer de métier toutes les 3 secondes
-setInterval(changeProfession, 3000);
+// Changer de métier toutes les 2 secondes
+setInterval(changeProfession, 2000);
 
 // Initialisation des animations AOS (Animate On Scroll)
 AOS.init({
@@ -79,7 +79,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         navLinks.classList.remove('active');
     });
 });
-// Fonction pour cloner les éléments et les ajouter à la fin pour un défilement infini
+
+// Défilement infini des outils
 function setupInfiniteScroll() {
     const toolsGrid = document.getElementById('tools-grid');
     const tools = toolsGrid.querySelectorAll('.tool');
@@ -90,14 +91,23 @@ function setupInfiniteScroll() {
         toolsGrid.appendChild(clone);
     });
 }
-function setupInfiniteScroll() {
-    const toolsGrid = document.getElementById('tools-grid');
-    const tools = toolsGrid.querySelectorAll('.tool');
-
-    tools.forEach(tool => {
-        const clone = tool.cloneNode(true);
-        toolsGrid.appendChild(clone);
-    });
-}
 
 setupInfiniteScroll();
+
+// Bouton "Retour en haut"
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
