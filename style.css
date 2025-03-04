@@ -28,6 +28,12 @@ nav {
     z-index: 1000;
 }
 
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -369,24 +375,6 @@ footer {
     padding: 1rem 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    .menu-toggle {
-        display: block;
-    }
-    .home h1 {
-        font-size: 2rem;
-    }
-    .about-content {
-        flex-direction: column;
-    }
-    .services-grid, .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
 /* Section Outils */
 .tools {
     background: #f9f9f9;
@@ -431,4 +419,23 @@ footer {
 
 .tool p {
     color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .home h1 {
+        font-size: 2rem;
+    }
+    .about-content {
+        flex-direction: column;
+    }
+    .services-grid, .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
