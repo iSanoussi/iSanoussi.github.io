@@ -439,3 +439,28 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+.tools {
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.tools-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: scrollTools 20s linear infinite; /* Animation de défilement */
+}
+
+@keyframes scrollTools {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
