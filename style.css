@@ -231,13 +231,20 @@ nav .nav-links a:hover {
     margin-bottom: 2rem;
 }
 
+.projects-wrapper {
+    overflow: hidden; /* Masquer le débordement */
+    width: 100%;
+}
+
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
+    gap: 20px; /* Espace entre les projets */
+    animation: scrollHorizontal 20s linear infinite; /* Animation de défilement */
 }
 
 .project {
+    flex: 0 0 auto;
+    width: calc(25% - 15px); /* Afficher 4 projets par ligne (25% de la largeur) */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -280,6 +287,27 @@ nav .nav-links a:hover {
 
 .project .btn:hover {
     background: #0056b3;
+}
+
+/* Animation de défilement horizontal */
+@keyframes scrollHorizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project {
+        width: calc(50% - 10px); /* Afficher 2 projets par ligne sur les petits écrans */
+    }
+
+    .projects-grid {
+        animation: none; /* Désactiver l'animation sur les petits écrans */
+    }
 }
 
 /* Section Contact */
