@@ -11,17 +11,15 @@ function changeProfession() {
 // Changer de métier toutes les 3 secondes
 setInterval(changeProfession, 3000);
 
-
 // Initialisation des animations AOS (Animate On Scroll)
 AOS.init({
     duration: 1000, // Durée des animations
     once: true, // Les animations ne se déclenchent qu'une fois
 });
 
-
 // Gestion du formulaire de contact
 const contactForm = document.getElementById('contact-form');
-const formMessage = document.getElementById('form-message');
+const formMessage = document.querySelector('.form-message'); // Sélection du message de formulaire
 
 contactForm.addEventListener('submit', function (e) {
     e.preventDefault(); // Empêche le rechargement de la page
