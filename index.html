@@ -15,10 +15,9 @@
     <!-- Barre de navigation -->
     <nav>
         <div class="container">
-            <a href="#" class="logo">LAFIGUE.</a>
+            <a href="#" class="logo">LaFigue.</a>
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#experience">Expériences</a></li>
                 <li><a href="#tools">Outils</a></li>
@@ -37,28 +36,18 @@
     <section id="home" class="home">
         <div class="container">
             <div class="home-content" data-aos="fade-up">
-                <div class="profile-image" data-aos="fade-up">
-                    <img src="assets/images/profile.jpg" alt="Photo de profil de Abdoul Wahid" loading="lazy">
+                <!-- Texte à gauche -->
+                <div class="home-text">
+                    <h1>
+                         <mark>Bonjour, je suis</mark> <span id="dynamic-text">Data Analyst</span>
+                    </h1>
+                    <p>Spécialisé dans l'analyse de données, la science des données et le développement Python.</p>
+                    <a href="#projects" class="btn">Voir mes projets</a>
+                    <a href="assets/cv.pdf" download class="btn">Télécharger mon CV</a>
                 </div>
-                <h1>"Bonjour, je suis" <span id="dynamic-text">Data Analyst</span></h1>
-                <p>Spécialisé dans l'analyse de données, la science des données et le développement Python.</p>
-                <a href="#projects" class="btn">Voir mes projets</a>
-                <a href="assets/cv.pdf" download class="btn">Télécharger mon CV</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section À propos -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 data-aos="fade-up">À propos de moi</h2>
-            <div class="about-content" data-aos="fade-up">
-                <div class="about-text">
-                    <p>
-                        Je suis un Data Analyst avec une expérience dans l'accompagnement des équipes financières et la mise en place de solutions de reporting automatisées.
-                        Je suis compétent dans la création d’indicateurs de performance (KPI), l’analyse des données bancaires, et la conception de dashboards Power BI.
-                    </p>
-                    <a href="#contact" class="btn">Me contacter</a>
+                <!-- Photo de profil à droite -->
+                <div class="profile-image" data-aos="fade-up">
+                    <img src="assets/images/profile.jpg" alt="Photo de profil de Abdoul Wahid">
                 </div>
             </div>
         </div>
@@ -94,7 +83,7 @@
             <h2 data-aos="fade-up">Expériences Professionnelles</h2>
             <div class="experience-grid">
                 <div class="experience-item" data-aos="fade-up">
-                    <h3>Data Consultant | LAFIGUE. | Lyon, France</h3>
+                    <h3>Data Consultant | LaFigue. | Lyon, France</h3>
                     <p><strong>2023 – 2024</strong></p>
                     <ul>
                         <li>Accompagnement des clients dans la migration, la modélisation des processus et la création de modèles prédictifs.</li>
@@ -129,7 +118,51 @@
                         <h3>SQL</h3>
                         <p>Un langage permettant de gérer et d'interroger des bases de données relationnelles.</p>
                     </div>
-                    <!-- Ajoutez d'autres outils ici -->
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fab fa-microsoft"></i>
+                        <h3>Power BI</h3>
+                        <p>Un outil de visualisation pour créer des tableaux de bord interactifs.</p>
+                    </div>
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fab fa-github"></i>
+                        <h3>GitHub</h3>
+                        <p>Une plateforme pour la gestion de version et la collaboration sur des projets de développement.</p>
+                    </div>
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fab fa-google"></i>
+                        <h3>Google Cloud</h3>
+                        <p>Des services cloud permettant de stocker et d'analyser des données à grande échelle.</p>
+                    </div>
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fas fa-file-excel"></i>
+                        <h3>Excel / VBA</h3>
+                        <p>Outil incontournable pour l'analyse et l'automatisation des données.</p>
+                    </div>
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Tableau</h3>
+                        <p>Un outil de Business Intelligence pour la visualisation interactive des données.</p>
+                    </div>
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fas fa-brain"></i>
+                        <h3>Dataiku</h3>
+                        <p>Une plateforme de science des données pour la création et le déploiement de modèles.</p>
+                    </div>
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fas fa-database"></i>
+                        <h3>SAS</h3>
+                        <p>Un logiciel analytique avancé pour le traitement et la modélisation statistique.</p>
+                    </div>
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fas fa-table"></i>
+                        <h3>Google Sheets</h3>
+                        <p>Alternative en ligne à Excel, idéale pour les analyses collaboratives.</p>
+                    </div>
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Docker</h3>
+                        <p>Une plateforme permettant de développer, déployer et exécuter des applications dans des conteneurs.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,7 +185,19 @@
                     <p>Automatisation des rapports mensuels à l'aide de Python et Google Cloud.</p>
                     <a href="#" class="btn">Voir le projet</a>
                 </div>
-                <!-- Ajoutez d'autres projets ici -->
+                <div class="project" data-aos="fade-up">
+                    <img src="assets/images/project4.jpg" alt="Analyse prédictive des risques">
+                    <h3>Analyse prédictive des risques</h3>
+                    <p>Développement d'un modèle prédictif pour l'analyse des risques de crédit à l'aide de techniques de machine learning.</p>
+                    <a href="#" class="btn">Voir le projet</a>
+                </div>
+                <div class="project" data-aos="fade-up">
+                    <img src="assets/images/project3.jpg" alt="Migration et modélisation de données">
+                    <h3>Migration et modélisation de données</h3>
+                    <p>Migration des données et modélisation des processus pour des clients de LaFigue.</p>
+                    <p><strong>Technologies :</strong> Python, SQL, Dataiku, Tableau</p>
+                    <a href="#" class="btn">Voir le projet</a>
+                </div>
             </div>
         </div>
     </section>
@@ -161,26 +206,33 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 data-aos="fade-up">Contactez-moi</h2>
-            <div class="contact-info" data-aos="fade-up">
-                <p><i class="fas fa-phone"></i> (+33) 7 45 31 34 56</p>
-                <p><i class="fas fa-envelope"></i> abdoulwahids2@icloud.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+            <div class="contact-wrapper">
+                <!-- Formulaire de contact -->
+                <form id="contact-form" class="contact-form" data-aos="fade-up" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Votre message" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="VOTRE_CLE_API"></div>
+                    </div>
+                    <button type="submit" class="btn">Envoyer le message</button>
+                </form>
+
+                <!-- Texte de la section "À propos" -->
+                <div class="about-text" data-aos="fade-up">
+                    <h3>À propos de moi</h3>
+                    <p>
+                        Je suis un Data Analyst avec une expérience dans l'accompagnement des équipes financières et la mise en place de solutions de reporting automatisées.
+                        Je suis compétent dans la création d’indicateurs de performance (KPI), l’analyse des données bancaires, et la conception de dashboards Power BI.
+                    </p>
+                </div>
             </div>
-            <form id="contact-form" class="contact-form" data-aos="fade-up" onsubmit="return validateForm()">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Votre email" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Votre message" rows="4" required></textarea>
-                </div>
-                <div class="form-group">
-                    <div class="g-recaptcha" data-sitekey="VOTRE_CLE_API"></div>
-                </div>
-                <button type="submit" class="btn">Envoyer le message</button>
-            </form>
         </div>
     </section>
 
@@ -195,9 +247,6 @@
         </div>
     </footer>
 
-    <!-- Bouton "Retour en haut" -->
-    <button id="back-to-top" class="back-to-top">↑</button>
-
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -206,11 +255,12 @@
         AOS.init();
 
         // Animation texte dynamique
-        const textArray = ['Consultant Data', 'Data Scientist', 'Data Analyst', 'Développeur SAS', 'Développeur Python'];
+        const dynamicText = document.getElementById('dynamic-text');
+        const textArray = ['Data Analyst', 'Data Scientist', 'Développeur SAS', 'Développeur Python'];
         let textIndex = 0;
 
         function changeText() {
-            document.getElementById("dynamic-text").textContent = textArray[textIndex];
+            dynamicText.textContent = textArray[textIndex];
             textIndex = (textIndex + 1) % textArray.length;
         }
 
@@ -242,24 +292,6 @@
 
             return true;
         }
-
-        // Bouton "Retour en haut"
-        const backToTopButton = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
     </script>
 </body>
 </html>
