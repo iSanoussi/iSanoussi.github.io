@@ -176,3 +176,17 @@ window.addEventListener('scroll', toggleBackToTopButton);
 
 // Écouteur d'événement pour le bouton "Retour en haut"
 backToTopButton.addEventListener('click', scrollToTop);
+
+// Défilement infini des projets
+function setupProjectsInfiniteScroll() {
+    const projectsGrid = document.getElementById('projects-grid');
+    const projects = projectsGrid.querySelectorAll('.project');
+
+    // Cloner les éléments et les ajouter à la fin pour créer un effet de boucle
+    projects.forEach(project => {
+        const clone = project.cloneNode(true);
+        projectsGrid.appendChild(clone);
+    });
+}
+
+setupProjectsInfiniteScroll();
