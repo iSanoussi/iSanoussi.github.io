@@ -1,6 +1,6 @@
 // Texte dynamique pour les métiers
 const dynamicText = document.getElementById('dynamic-text');
-const professions = ["Data Analyst", "Data Scientist", "Développeur Python"];
+const professions = ["Data Scientist", "Data Analyst", "Développeur Python", "Développeur SAS"];
 let index = 0;
 
 function changeProfession() {
