@@ -544,3 +544,18 @@ section:last-child {
     background: #333;
     color: #fff;
 }
+
+/* Supprimer ou commenter cette partie */
+.projects-grid {
+    animation: scrollHorizontal 20s linear infinite; /* Animation de défilement */
+}
+
+/* Supprimer ou commenter cette partie */
+@keyframes scrollHorizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
