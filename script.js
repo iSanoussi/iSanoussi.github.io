@@ -79,3 +79,17 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+// Fonction pour cloner les éléments et les ajouter à la fin pour un défilement infini
+function setupInfiniteScroll() {
+    const toolsGrid = document.getElementById('tools-grid');
+    const tools = toolsGrid.querySelectorAll('.tool');
+
+    // Cloner les éléments et les ajouter à la fin
+    tools.forEach(tool => {
+        const clone = tool.cloneNode(true);
+        toolsGrid.appendChild(clone);
+    });
+}
+
+// Démarrer le défilement infini
+setupInfiniteScroll();
