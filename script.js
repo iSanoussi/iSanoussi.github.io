@@ -66,3 +66,16 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+
+// Texte dynamique pour les métiers
+const dynamicText = document.getElementById('dynamic-text');
+const professions = ["Data Analyst", "Data Scientist", "Développeur Python"];
+let index = 0;
+
+function changeProfession() {
+    dynamicText.textContent = professions[index];
+    index = (index + 1) % professions.length; // Passer au métier suivant
+}
+
+// Changer de métier toutes les 3 secondes
+setInterval(changeProfession, 3000);
