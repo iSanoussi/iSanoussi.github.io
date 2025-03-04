@@ -79,8 +79,25 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+// Fonction pour cloner les éléments et les ajouter à la fin pour un défilement infini
+function setupInfiniteScroll() {
+    const toolsGrid = document.getElementById('tools-grid');
+    const tools = toolsGrid.querySelectorAll('.tool');
 
-// Dupliquer le contenu des outils pour un défilement infini
-const toolsScroll = document.querySelector('.tools-scroll');
-const toolsContent = toolsScroll.innerHTML; // Récupère le contenu actuel
-toolsScroll.innerHTML += toolsContent; // Duplique le contenu
+    // Cloner les éléments et les ajouter à la fin
+    tools.forEach(tool => {
+        const clone = tool.cloneNode(true);
+        toolsGrid.appendChild(clone);
+    });
+}
+function setupInfiniteScroll() {
+    const toolsGrid = document.getElementById('tools-grid');
+    const tools = toolsGrid.querySelectorAll('.tool');
+
+    tools.forEach(tool => {
+        const clone = tool.cloneNode(true);
+        toolsGrid.appendChild(clone);
+    });
+}
+
+setupInfiniteScroll();
