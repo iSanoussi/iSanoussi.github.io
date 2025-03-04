@@ -10,336 +10,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <style>
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Sticky navbar */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: #333;
-            padding: 10px 0;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        nav .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav .logo {
-            font-size: 1.5rem;
-            color: white;
-            font-weight: bold;
-        }
-
-        nav .nav-links a {
-            color: white;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        nav .nav-links a:hover {
-            color: #ffcc00;
-        }
-
-        .btn {
-            background-color: #ffcc00;
-            padding: 10px 20px;
-            color: #333;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #333;
-            color: white;
-        }
-
-        /* Animations d'en-tête */
-        #home {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        #home h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        /* Section À propos */
-        .about {
-            padding: 60px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .about-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-text {
-            max-width: 500px;
-            text-align: left;
-        }
-
-        .profile-image {
-            max-width: 250px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid #ffcc00;
-        }
-
-        .profile-image img {
-            width: 100%;
-            border-radius: 50%;
-        }
-
-        /* Section Services */
-        .services {
-            padding: 60px 20px;
-            background-color: #f4f4f4;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .service:hover {
-            transform: translateY(-10px);
-        }
-
-        .service i {
-            font-size: 2rem;
-            color: #ffcc00;
-            margin-bottom: 10px;
-        }
-
-        /* Section Expériences */
-        .experience {
-            padding: 60px 20px;
-            background-color: #fff;
-        }
-
-        .experience-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .experience-item {
-            margin-bottom: 20px;
-        }
-
-        .experience-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .experience-item p {
-            margin-bottom: 10px;
-        }
-
-        .experience-item ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        /* Section Outils */
-        .tools {
-            padding: 60px 20px;
-            background-color: #f4f4f4;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .tool {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .tool:hover {
-            transform: translateY(-10px);
-        }
-
-        .tool i {
-            font-size: 2rem;
-            color: #ffcc00;
-            margin-bottom: 10px;
-        }
-
-        /* Section Projets */
-        .projects {
-            padding: 60px 20px;
-            background-color: #fff;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-10px);
-        }
-
-        .project img {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        /* Section Contact */
-        .contact {
-            padding: 60px 20px;
-            background-color: #f4f4f4;
-        }
-
-        .contact-info {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-
-        .contact-info i {
-            margin-right: 10px;
-            color: #ffcc00;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav .menu-toggle {
-                display: block;
-            }
-
-            nav.active .nav-links {
-                display: flex;
-            }
-
-            #home h1 {
-                font-size: 2rem;
-            }
-
-            .about-content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .services-grid,
-            .tools-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Barre de navigation -->
     <nav>
         <div class="container">
-            <a href="#" class="logo">LaFigue.</a>
+            <a href="#" class="logo">LAFIGUE.</a>
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#about">À propos</a></li>
@@ -361,7 +37,10 @@
     <section id="home" class="home">
         <div class="container">
             <div class="home-content" data-aos="fade-up">
-                <h1>Bonjour, je suis <span id="dynamic-text">Data Analyst</span></h1>
+                <div class="profile-image" data-aos="fade-up">
+                    <img src="assets/images/profile.jpg" alt="Photo de profil de Abdoul Wahid" loading="lazy">
+                </div>
+                <h1>"Bonjour, je suis" <span id="dynamic-text">Data Analyst</span></h1>
                 <p>Spécialisé dans l'analyse de données, la science des données et le développement Python.</p>
                 <a href="#projects" class="btn">Voir mes projets</a>
                 <a href="assets/cv.pdf" download class="btn">Télécharger mon CV</a>
@@ -380,9 +59,6 @@
                         Je suis compétent dans la création d’indicateurs de performance (KPI), l’analyse des données bancaires, et la conception de dashboards Power BI.
                     </p>
                     <a href="#contact" class="btn">Me contacter</a>
-                </div>
-                <div class="profile-image" data-aos="fade-up">
-                    <img src="assets/images/profile.jpg" alt="Photo de profil de Abdoul Wahid">
                 </div>
             </div>
         </div>
@@ -418,7 +94,7 @@
             <h2 data-aos="fade-up">Expériences Professionnelles</h2>
             <div class="experience-grid">
                 <div class="experience-item" data-aos="fade-up">
-                    <h3>Data Consultant | LaFigue. | Lyon, France</h3>
+                    <h3>Data Consultant | LAFIGUE. | Lyon, France</h3>
                     <p><strong>2023 – 2024</strong></p>
                     <ul>
                         <li>Accompagnement des clients dans la migration, la modélisation des processus et la création de modèles prédictifs.</li>
@@ -441,61 +117,19 @@
     <section id="tools" class="tools">
         <div class="container">
             <h2 data-aos="fade-up">Outils Utilisés</h2>
-            <div class="tools-grid">
-                <div class="tool" data-aos="fade-up">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                    <p>Un langage de programmation puissant utilisé pour l'analyse des données et le machine learning.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fas fa-database"></i>
-                    <h3>SQL</h3>
-                    <p>Un langage permettant de gérer et d'interroger des bases de données relationnelles.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fab fa-microsoft"></i>
-                    <h3>Power BI</h3>
-                    <p>Un outil de visualisation pour créer des tableaux de bord interactifs.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fab fa-github"></i>
-                    <h3>GitHub</h3>
-                    <p>Une plateforme pour la gestion de version et la collaboration sur des projets de développement.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fab fa-google"></i>
-                    <h3>Google Cloud</h3>
-                    <p>Des services cloud permettant de stocker et d'analyser des données à grande échelle.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fas fa-file-excel"></i>
-                    <h3>Excel / VBA</h3>
-                    <p>Outil incontournable pour l'analyse et l'automatisation des données.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Tableau</h3>
-                    <p>Un outil de Business Intelligence pour la visualisation interactive des données.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fas fa-brain"></i>
-                    <h3>Dataiku</h3>
-                    <p>Une plateforme de science des données pour la création et le déploiement de modèles.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fas fa-database"></i>
-                    <h3>SAS</h3>
-                    <p>Un logiciel analytique avancé pour le traitement et la modélisation statistique.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fas fa-table"></i>
-                    <h3>Google Sheets</h3>
-                    <p>Alternative en ligne à Excel, idéale pour les analyses collaboratives.</p>
-                </div>
-                <div class="tool" data-aos="fade-up">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Docker</h3>
-                    <p>Une plateforme permettant de développer, déployer et exécuter des applications dans des conteneurs.</p>
+            <div class="tools-wrapper">
+                <div class="tools-grid" id="tools-grid">
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                        <p>Un langage de programmation puissant utilisé pour l'analyse des données et le machine learning.</p>
+                    </div>
+                    <div class="tool" data-aos="fade-up">
+                        <i class="fas fa-database"></i>
+                        <h3>SQL</h3>
+                        <p>Un langage permettant de gérer et d'interroger des bases de données relationnelles.</p>
+                    </div>
+                    <!-- Ajoutez d'autres outils ici -->
                 </div>
             </div>
         </div>
@@ -518,19 +152,7 @@
                     <p>Automatisation des rapports mensuels à l'aide de Python et Google Cloud.</p>
                     <a href="#" class="btn">Voir le projet</a>
                 </div>
-                <div class="project" data-aos="fade-up">
-                    <img src="assets/images/project4.jpg" alt="Analyse prédictive des risques">
-                    <h3>Analyse prédictive des risques</h3>
-                    <p>Développement d'un modèle prédictif pour l'analyse des risques de crédit à l'aide de techniques de machine learning.</p>
-                    <a href="#" class="btn">Voir le projet</a>
-                </div>
-                <div class="project" data-aos="fade-up">
-                    <img src="assets/images/project3.jpg" alt="Migration et modélisation de données">
-                    <h3>Migration et modélisation de données</h3>
-                    <p>Migration des données et modélisation des processus pour des clients de LaFigue.</p>
-                    <p><strong>Technologies :</strong> Python, SQL, Dataiku, Tableau</p>
-                    <a href="#" class="btn">Voir le projet</a>
-                </div>
+                <!-- Ajoutez d'autres projets ici -->
             </div>
         </div>
     </section>
@@ -567,12 +189,16 @@
         <div class="container">
             <p>&copy; 2024 LaFigue. Tous droits réservés.</p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/abdoulwahid" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/abdoulwahid" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/abdoul-sanoussi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://isanoussi.github.io/" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- Bouton "Retour en haut" -->
+    <button id="back-to-top" class="back-to-top">↑</button>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -580,7 +206,7 @@
         AOS.init();
 
         // Animation texte dynamique
-        const textArray = ['Data Analyst', 'Data Scientist', 'Consultant Data'];
+        const textArray = ['Consultant Data', 'Data Scientist', 'Data Analyst', 'Développeur SAS', 'Développeur Python'];
         let textIndex = 0;
 
         function changeText() {
@@ -616,6 +242,24 @@
 
             return true;
         }
+
+        // Bouton "Retour en haut"
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>

@@ -28,6 +28,12 @@ nav {
     z-index: 1000;
 }
 
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -369,24 +375,6 @@ footer {
     padding: 1rem 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    .menu-toggle {
-        display: block;
-    }
-    .home h1 {
-        font-size: 2rem;
-    }
-    .about-content {
-        flex-direction: column;
-    }
-    .services-grid, .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
 /* Section Outils */
 .tools {
     background: #f9f9f9;
@@ -431,4 +419,82 @@ footer {
 
 .tool p {
     color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .home h1 {
+        font-size: 2rem;
+    }
+    .about-content {
+        flex-direction: column;
+    }
+    .services-grid, .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.tools-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.tools-scroll {
+    display: flex;
+    gap: 20px;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.tools {
+    overflow: hidden; /* Masquer le débordement */
+    position: relative;
+    padding: 2rem 0; /* Espacement vertical */
+}
+
+.tools-wrapper {
+    overflow: hidden; /* Masquer le débordement */
+    width: 100%;
+}
+
+.tools-grid {
+    display: flex;
+    gap: 20px; /* Espace entre les outils */
+    animation: scrollHorizontal 20s linear infinite; /* Animation de défilement */
+}
+
+.tool {
+    flex: 0 0 auto; /* Empêcher les éléments de rétrécir */
+    width: 250px; /* Largeur fixe pour chaque outil */
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@keyframes scrollHorizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Défilement de 50% de la largeur totale */
+    }
 }
