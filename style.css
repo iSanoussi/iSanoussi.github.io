@@ -63,23 +63,24 @@ nav .nav-links a:hover {
 
 .home-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 2rem; /* Espace entre le texte et la photo */
+    gap: 2rem;
 }
 
 .home-text {
-    flex: 1; /* Prend l'espace disponible */
-    text-align: left; /* Alignement du texte à gauche */
+    flex: 1;
 }
 
 .home-text h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .home-text p {
     margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #555;
 }
 
 .home-text .btn {
@@ -89,6 +90,7 @@ nav .nav-links a:hover {
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s ease, transform 0.3s ease;
+    margin-right: 1rem;
 }
 
 .home-text .btn:hover {
@@ -97,16 +99,25 @@ nav .nav-links a:hover {
 }
 
 .profile-image {
-    flex: 0 0 auto; /* Empêche la photo de rétrécir */
-    max-width: 300px; /* Taille de la photo */
-    border-radius: 50%; /* Photo ronde */
-    overflow: hidden; /* Cache les bords de l'image */
+    flex: 0 0 auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-image img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Section Services */
