@@ -125,8 +125,8 @@ nav .nav-links a:hover {
 /* Animation circulaire autour de la photo de profil */
 .profile-image {
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     margin-bottom: 2rem;
 }
 
