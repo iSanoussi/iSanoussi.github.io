@@ -449,3 +449,56 @@ footer {
         margin-top: 2rem;
     }
 }
+
+@media (max-width: 768px) {
+    /* Réduire les marges et les paddings */
+    section {
+        padding: 2rem 0;
+        margin-bottom: 1rem;
+    }
+
+    /* Section En-tête */
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin: 2rem auto; /* Centrer l'image de profil */
+    }
+
+    /* Section Services */
+    .services-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    /* Section Expériences */
+    .experience-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    /* Section Outils */
+    .tools-grid {
+        animation: none; /* Désactiver l'animation sur mobile */
+        flex-wrap: wrap; /* Afficher les outils en plusieurs lignes */
+    }
+
+    .tool {
+        width: calc(50% - 10px); /* Deux outils par ligne sur mobile */
+    }
+
+    /* Section Projets */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    /* Section Contact */
+    .contact-wrapper {
+        flex-direction: column; /* Empiler le formulaire et le texte "À propos" */
+    }
+
+    .about-text,
+    .contact-form {
+        width: 100%; /* Prendre toute la largeur */
+    }
+}
