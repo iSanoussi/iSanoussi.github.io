@@ -28,31 +28,33 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+            <!-- Bouton pour le mode sombre -->
+            <button id="theme-toggle">Mode Sombre</button>
         </div>
     </nav>
 
-<!-- Section En-tête -->
-<section id="home" class="home">
-    <div class="container">
-        <div class="home-content" data-aos="fade-up">
-            <!-- Photo de profil à gauche -->
-            <div class="profile-image" data-aos="fade-up">
-                <img src="assets/images/profile.jpg" alt="Photo de profil de Abdoul Wahid">
-            </div>
-            <!-- Texte à droite -->
-            <div class="home-text">
-                <h1>
-                    Bonjour, je suis <span id="dynamic-text">Data Analyst</span>
-                </h1>
-                <p>Spécialisé dans l'analyse de données, la science des données et le développement Python.</p>
-                <div class="btn-container">
-                    <a href="#projects" class="btn">Voir mes projets</a>
-                    <a href="assets/cv.pdf" download class="btn">Télécharger mon CV</a>
+    <!-- Section En-tête -->
+    <section id="home" class="home">
+        <div class="container">
+            <div class="home-content" data-aos="fade-up">
+                <!-- Photo de profil à gauche -->
+                <div class="profile-image" data-aos="fade-up">
+                    <img src="assets/images/profile.jpg" alt="Photo de profil de Abdoul Wahid">
+                </div>
+                <!-- Texte à droite -->
+                <div class="home-text">
+                    <h1>
+                        Bonjour, je suis <span id="dynamic-text">Data Analyst</span>
+                    </h1>
+                    <p>Spécialisé dans l'analyse de données, la science des données et le développement Python.</p>
+                    <div class="btn-container">
+                        <a href="#projects" class="btn">Voir mes projets</a>
+                        <a href="assets/cv.pdf" download class="btn">Télécharger mon CV</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Section Services -->
     <section id="services" class="services">
@@ -83,22 +85,34 @@
         <div class="container">
             <h2 data-aos="fade-up">Expériences Professionnelles</h2>
             <div class="experience-grid">
+                <!-- Expérience 1 : Data Consultant -->
                 <div class="experience-item" data-aos="fade-up">
                     <h3>Data Consultant | LaFigue. | Lyon, France</h3>
                     <p><strong>2023 – 2024</strong></p>
                     <ul>
                         <li>Accompagnement des clients dans la migration, la modélisation des processus et la création de modèles prédictifs.</li>
-                        <li>Conception et implémentation de solutions innovantes pour améliorer l'efficacité opérationnelle.</li>
+                        <li>Conception et implémentation de solutions innovantes pour améliorer l'efficacité opérationnelle des entreprises clientes.</li>
+                        <li>Développement de tableaux de bord interactifs et de rapports personnalisés pour l'aide à la décision.</li>
+                        <li><strong>Environnement technique :</strong> Python (Pandas, NumPy, Scikit-learn), SQL, Power BI (DAX), Tableau, Dataiku, Alteryx</li>
                     </ul>
                 </div>
+
+                <!-- Expérience 2 : Risk Data Analyst -->
                 <div class="experience-item" data-aos="fade-up">
                     <h3>Risk Data Analyst | BNP Paribas Personal Finance | Levallois-Perret, France</h3>
                     <p><strong>2022 – 2023</strong></p>
                     <ul>
-                        <li>Automatisation des processus de production de données via Python et SQL.</li>
-                        <li>Création de rapports financiers et suivi des indicateurs clés (KPI) via Power BI.</li>
+                        <li>Extraction, préparation et nettoyage des données financières et opérationnelles pour la production de rapports stratégiques.</li>
+                        <li>Automatisation des processus de production de données via Python et SQL, permettant une réduction de 30% du temps de traitement.</li>
+                        <li>Automatisation de processus de traitement de données et création de flux de travail avec Alteryx, améliorant l'efficacité opérationnelle et réduisant les délais de production.</li>
+                        <li>Création de rapports financiers et suivi des indicateurs clés (KPI) via Power BI, améliorant la visibilité des données pour la prise de décision interne.</li>
+                        <li>Collaboration avec les équipes de gestion de la performance pour définir les besoins en données financières, assurant leur intégrité et leur conformité.</li>
+                        <li>Mise en œuvre de solutions de qualité des données pour garantir une restitution fiable et exacte des informations financières.</li>
+                        <li><strong>Environnement technique :</strong> Hadoop, Python, SQL, SAS, Power BI, Alteryx, GCP</li>
                     </ul>
                 </div>
+
+                <!-- Ajoutez les autres expériences de la même manière -->
             </div>
         </div>
     </section>
@@ -169,79 +183,81 @@
         </div>
     </section>
 
-  <!-- Section Projets -->
-<section id="projects" class="projects">
-    <div class="container">
-        <h2 data-aos="fade-up">Projets</h2>
-        <div class="projects-wrapper">
-            <div class="projects-grid" id="projects-grid">
-                <!-- Projet 1 -->
-                <div class="project" data-aos="fade-up">
-                    <img src="assets/images/project1.jpg" alt="Tableau de bord Power BI">
-                    <h3>Tableau de bord Power BI</h3>
-                    <p>Création d'un tableau de bord dynamique pour la visualisation des KPI financiers.</p>
-                    <a href="https://management-datascience.org/articles/19445/" class="btn">Voir le projet</a>
+    <!-- Section Projets -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 data-aos="fade-up">Projets</h2>
+            <div class="projects-wrapper">
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projet 1 -->
+                    <div class="project" data-aos="fade-up">
+                        <img src="assets/images/project1.jpg" alt="Tableau de bord Power BI">
+                        <h3>Tableau de bord Power BI</h3>
+                        <p>Création d'un tableau de bord dynamique pour la visualisation des KPI financiers.</p>
+                        <a href="https://management-datascience.org/articles/19445/" class="btn">Voir le projet</a>
+                    </div>
+                    <!-- Projet 2 -->
+                    <div class="project" data-aos="fade-up">
+                        <img src="assets/images/project2.jpg" alt="Automatisation des rapports">
+                        <h3>Automatisation des rapports</h3>
+                        <p>Automatisation des rapports mensuels à l'aide de Python et Google Cloud.</p>
+                        <a href="#" class="btn">Voir le projet</a>
+                    </div>
+                    <!-- Projet 3 -->
+                    <div class="project" data-aos="fade-up">
+                        <img src="assets/images/project3.jpg" alt="Migration et modélisation de données">
+                        <h3>Migration et modélisation de données</h3>
+                        <p>Migration des données et modélisation des processus pour des clients de LaFigue.</p>
+                        <a href="#" class="btn">Voir le projet</a>
+                    </div>
+                    <!-- Projet 4 -->
+                    <div class="project" data-aos="fade-up">
+                        <img src="assets/images/project4.jpg" alt="Analyse prédictive des risques">
+                        <h3>Analyse prédictive des risques</h3>
+                        <p>Développement d'un modèle prédictif pour l'analyse des risques de crédit.</p>
+                        <a href="#" class="btn">Voir le projet</a>
+                    </div>
+                    <!-- Ajoutez d'autres projets ici si nécessaire -->
                 </div>
-                <!-- Projet 2 -->
-                <div class="project" data-aos="fade-up">
-                    <img src="assets/images/project2.jpg" alt="Automatisation des rapports">
-                    <h3>Automatisation des rapports</h3>
-                    <p>Automatisation des rapports mensuels à l'aide de Python et Google Cloud.</p>
-                    <a href="#" class="btn">Voir le projet</a>
-                </div>
-                <!-- Projet 3 -->
-                <div class="project" data-aos="fade-up">
-                    <img src="assets/images/project3.jpg" alt="Migration et modélisation de données">
-                    <h3>Migration et modélisation de données</h3>
-                    <p>Migration des données et modélisation des processus pour des clients de LaFigue.</p>
-                    <a href="#" class="btn">Voir le projet</a>
-                </div>
-                <!-- Projet 4 -->
-                <div class="project" data-aos="fade-up">
-                    <img src="assets/images/project4.jpg" alt="Analyse prédictive des risques">
-                    <h3>Analyse prédictive des risques</h3>
-                    <p>Développement d'un modèle prédictif pour l'analyse des risques de crédit.</p>
-                    <a href="#" class="btn">Voir le projet</a>
-                </div>
-                <!-- Ajoutez d'autres projets ici si nécessaire -->
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
- <!-- Section Contact -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2 data-aos="fade-up">Contactez-moi</h2>
-        <div class="contact-wrapper">
-            <!-- Texte "À propos" à gauche -->
-            <div class="about-text" data-aos="fade-up">
-                <h3>À propos de moi</h3>
-                <p>
-                    Je suis un Data Analyst avec une expérience dans l'accompagnement des équipes financières et la mise en place de solutions de reporting automatisées.
-                    Je suis compétent dans la création d’indicateurs de performance (KPI), l’analyse des données bancaires, et la conception de dashboards Power BI.
-                </p>
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Contactez-moi</h2>
+            <div class="contact-wrapper">
+                <!-- Texte "À propos" à gauche -->
+                <div class="about-text" data-aos="fade-up">
+                    <h3>À propos de moi</h3>
+                    <p>
+                        Je suis un Data Analyst avec une expérience dans l'accompagnement des équipes financières et la mise en place de solutions de reporting automatisées.
+                        Je suis compétent dans la création d’indicateurs de performance (KPI), l’analyse des données bancaires, et la conception de dashboards Power BI.
+                    </p>
+                    <!-- Miniature de la photo de profil -->
+                    <img src="assets/images/profile.jpg" alt="Photo de profil" class="profile-thumbnail">
+                </div>
+
+                <!-- Formulaire de contact à droite -->
+                <form id="contact-form" class="contact-form" data-aos="fade-up" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Votre message" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="VOTRE_CLE_API"></div>
+                    </div>
+                    <button type="submit" class="btn">Envoyer le message</button>
+                </form>
             </div>
-
-            <!-- Formulaire de contact à droite -->
-            <form id="contact-form" class="contact-form" data-aos="fade-up" onsubmit="return validateForm()">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Votre email" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Votre message" rows="4" required></textarea>
-                </div>
-                <div class="form-group">
-                    <div class="g-recaptcha" data-sitekey="VOTRE_CLE_API"></div>
-                </div>
-                <button type="submit" class="btn">Envoyer le message</button>
-            </form>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -299,6 +315,19 @@
 
             return true;
         }
+
+        // Mode sombre
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Mode Clair';
+            } else {
+                toggleButton.textContent = 'Mode Sombre';
+            }
+        });
     </script>
 </body>
 </html>
