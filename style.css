@@ -2,10 +2,10 @@
     /* Couleurs par défaut (mode clair) */
     --primary-color: #007BFF; /* Bleu */
     --secondary-color: #0056b3; /* Bleu foncé */
-    --background-light: #f9f9f9;
-    --background-dark: #333;
-    --text-light: #fff;
-    --text-dark: #333;
+    --background-light: #f9f9f9; /* Fond clair */
+    --background-dark: #333; /* Fond sombre */
+    --text-light: #fff; /* Texte clair */
+    --text-dark: #333; /* Texte sombre */
 
     /* Polices */
     --font-primary: 'Arial', sans-serif;
@@ -24,14 +24,6 @@
     --transition-duration: 0.3s;
 }
 
-/* Mode sombre */
-body.dark-mode {
-    --primary-color: #bb86fc; /* Violet */
-    --secondary-color: #3700b3; /* Violet foncé */
-    --background-light: #121212; /* Fond sombre */
-    --text-dark: #ffffff; /* Texte clair */
-}
-
 /* Reset et styles de base */
 * {
     margin: 0;
@@ -45,6 +37,7 @@ body {
     background: var(--background-light);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
 .container {
@@ -244,7 +237,6 @@ nav .nav-links a:hover {
 .tools-grid {
     display: flex;
     gap: var(--spacing-medium);
-    animation: scrollHorizontal 20s linear infinite;
     width: max-content;
 }
 
@@ -256,15 +248,6 @@ nav .nav-links a:hover {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     text-align: center;
-}
-
-@keyframes scrollHorizontal {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
 }
 
 /* Section Projets */
@@ -284,15 +267,12 @@ nav .nav-links a:hover {
 }
 
 .projects-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-medium);
-    animation: scrollHorizontal 20s linear infinite;
-    width: max-content;
 }
 
 .project {
-    flex: 0 0 auto;
-    width: 250px;
     background: var(--text-light);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -353,19 +333,6 @@ nav .nav-links a:hover {
     display: flex;
     gap: var(--spacing-large);
     align-items: flex-start;
-}
-
-.about-text {
-    flex: 1;
-    background-color: #444;
-    padding: var(--spacing-medium);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.about-text h3 {
-    margin-bottom: var(--spacing-medium);
-    color: var(--primary-color);
 }
 
 .contact-form {
@@ -431,6 +398,44 @@ footer {
     color: var(--primary-color);
 }
 
+/* Mode sombre */
+body.dark-mode {
+    background-color: #121212; /* Fond sombre */
+    color: #ffffff; /* Texte clair */
+}
+
+body.dark-mode a {
+    color: #bb86fc; /* Liens violets en mode sombre */
+}
+
+body.dark-mode .btn {
+    background-color: #bb86fc; /* Boutons violets en mode sombre */
+    color: #121212; /* Texte sombre sur boutons */
+}
+
+body.dark-mode .experience-item,
+body.dark-mode .tool,
+body.dark-mode .service,
+body.dark-mode .project {
+    background-color: #1e1e1e; /* Fond des cartes en mode sombre */
+    color: #ffffff; /* Texte clair */
+    border-color: #333; /* Bordure sombre */
+}
+
+body.dark-mode .contact {
+    background-color: #1e1e1e; /* Fond de la section contact en mode sombre */
+}
+
+body.dark-mode .contact-form {
+    background-color: #333; /* Fond du formulaire en mode sombre */
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background-color: #444; /* Fond des champs en mode sombre */
+    color: #ffffff; /* Texte clair */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .home-content {
@@ -458,15 +463,8 @@ footer {
         flex-direction: column;
     }
 
-    .about-text,
     .contact-form {
         width: 100%;
-    }
-
-    .tools-grid,
-    .projects-grid {
-        animation: none;
-        flex-wrap: wrap;
     }
 }
 
