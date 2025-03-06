@@ -182,3 +182,46 @@ function scrollToTop() {
 
 window.addEventListener('scroll', toggleBackToTopButton);
 backToTopButton.addEventListener('click', scrollToTop);
+
+// Sélectionnez tous les titres de section
+const sectionTitles = document.querySelectorAll('.section-title-light, .section-title-dark');
+
+// Fonction pour appliquer les classes dynamiques
+function updateSectionTitles(isDarkMode) {
+    sectionTitles.forEach(title => {
+        if (isDarkMode) {
+            title.classList.remove('section-title-light');
+            title.classList.add('section-title-dark');
+        } else {
+            title.classList.remove('section-title-dark');
+            title.classList.add('section-title-light');
+        }
+    });
+}
+
+// Gestion du mode sombre
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+function toggleDarkMode() {
+    body.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+    themeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
+
+    // Appliquer les classes dynamiques aux titres de section
+    updateSectionTitles(isDarkMode);
+}
+
+// Appliquer le mode sombre par défaut au chargement de la page
+const savedDarkMode = localStorage.getItem('darkMode');
+if (savedDarkMode === 'true') {
+    body.classList.add('dark-mode');
+    themeToggle.textContent = 'Mode Clair';
+    updateSectionTitles(true); // Appliquer la couleur violette en mode sombre
+} else {
+    themeToggle.textContent = 'Mode Sombre';
+    updateSectionTitles(false); // Appliquer la couleur bleue en mode clair
+}
+
+themeToggle.addEventListener('click', toggleDarkMode);
