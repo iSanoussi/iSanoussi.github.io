@@ -621,3 +621,28 @@ body.dark-mode .tool p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+
+
+
+/* Styles pour le mode sombre */
+body.dark-mode .tool,
+body.dark-mode .project {
+    background-color: #1e1e1e; /* Fond sombre pour les cartes */
+    color: #ffffff; /* Texte en blanc */
+    border: 1px solid #333; /* Bordure pour une meilleure séparation */
+}
+
+body.dark-mode .tool h3,
+body.dark-mode .project h3 {
+    color: #ffffff; /* Titres en blanc */
+}
+
+body.dark-mode .tool p,
+body.dark-mode .project p {
+    color: #e0e0e0; /* Texte en gris clair pour un meilleur contraste */
+}
+
+body.dark-mode .tool i,
+body.dark-mode .project i {
+    color: #bb86fc; /* Icônes en violet pour un accent visuel */
+}
