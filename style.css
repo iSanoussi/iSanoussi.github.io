@@ -83,6 +83,31 @@ nav .nav-links a:hover {
     color: var(--primary-color);
 }
 
+.logo-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: var(--spacing-small) var(--spacing-medium);
+    background: var(--primary-color);
+    color: var(--text-light);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background var(--transition-duration) ease;
+}
+
+.logo-button:hover {
+    background: var(--secondary-color);
+}
+
+/* Correction de la couleur du bouton LaFigue en mode sombre */
+body.dark-mode .logo-button {
+    background-color: #bb86fc; /* Couleur violette pour le mode sombre */
+    color: #121212; /* Texte sombre pour contraster */
+}
+
+body.dark-mode .logo-button:hover {
+    background-color: #9a67ea; /* Couleur violette plus claire au survol */
+}
+
 /* Section En-tête */
 .home {
     background: var(--background-light);
@@ -481,4 +506,25 @@ body.dark-mode .form-group textarea {
         width: 100%;
         margin-bottom: var(--spacing-small);
     }
+}
+
+/* Correction de la couleur de fond et du texte dans l'en-tête en mode sombre */
+body.dark-mode .home {
+    background-color: #f9f9f9; /* Fond clair pour l'en-tête */
+}
+
+body.dark-mode .home-text h1,
+body.dark-mode .home-text p {
+    color: #333; /* Texte noir pour un bon contraste */
+}
+
+/* Correction de la couleur de fond et du texte dans la section Outils en mode sombre */
+body.dark-mode .tools {
+    background-color: #f9f9f9; /* Fond clair pour la section Outils */
+}
+
+body.dark-mode .tools h2,
+body.dark-mode .tool h3,
+body.dark-mode .tool p {
+    color: #333; /* Texte noir pour un bon contraste */
 }
