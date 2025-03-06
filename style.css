@@ -557,7 +557,7 @@ body.dark-mode .tool p {
 
 /* Style du bouton Mode Sombre/Clair */
 #theme-toggle {
-    background-color: var(--primary-color); /* Bleu par défaut (Mode Sombre) */
+    background-color: var(--primary-color); /* Bleu par défaut */
     color: var(--text-light);
     padding: var(--spacing-small) var(--spacing-medium);
     border: none;
@@ -566,14 +566,14 @@ body.dark-mode .tool p {
     transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
-/* Style du bouton en Mode Clair (violet) */
-body:not(.dark-mode) #theme-toggle {
-    background-color: #bb86fc; /* Violet en Mode Clair */
+/* Style du bouton en mode sombre */
+body.dark-mode #theme-toggle {
+    background-color: #bb86fc; /* Violet en mode sombre */
     color: #121212; /* Texte sombre pour contraster */
 }
 
-/* Style du bouton en Mode Sombre (bleu) */
-body.dark-mode #theme-toggle {
-    background-color: var(--primary-color); /* Bleu en Mode Sombre */
+/* Style du bouton en mode clair */
+body:not(.dark-mode) #theme-toggle {
+    background-color: var(--primary-color); /* Bleu en mode clair */
     color: var(--text-light); /* Texte clair pour contraster */
 }
