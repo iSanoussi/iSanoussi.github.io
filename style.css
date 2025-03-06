@@ -404,6 +404,10 @@ body.dark-mode {
     color: #ffffff; /* Texte clair */
 }
 
+body.dark-mode .service i {
+    color: #bb86fc; /* Couleur violette pour le mode sombre */
+}
+
 body.dark-mode a {
     color: #bb86fc; /* Liens violets en mode sombre */
 }
