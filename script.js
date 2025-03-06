@@ -249,3 +249,27 @@ function startScroll() {
 }
 
 startScroll();
+
+
+const certificationsContainer = document.querySelector('.certifications-container');
+
+function autoScroll() {
+    const scrollAmount = 300;
+    const scrollInterval = 3000;
+
+    setInterval(() => {
+        certificationsContainer.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+
+        if (certificationsContainer.scrollLeft + certificationsContainer.clientWidth >= certificationsContainer.scrollWidth) {
+            certificationsContainer.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }, scrollInterval);
+}
+
+window.onload = autoScroll;
