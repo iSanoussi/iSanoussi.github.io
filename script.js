@@ -225,3 +225,27 @@ if (savedDarkMode === 'true') {
 }
 
 themeToggle.addEventListener('click', toggleDarkMode);
+
+const toolsGrid = document.querySelector('.tools-grid');
+
+function startScroll() {
+    let scrollAmount = 0;
+    const scrollSpeed = 1; // Vitesse de défilement (en pixels)
+
+    function scroll() {
+        toolsGrid.scrollLeft += scrollSpeed;
+        scrollAmount += scrollSpeed;
+
+        // Si on atteint la fin du contenu, revenir au début
+        if (scrollAmount >= toolsGrid.scrollWidth / 2) {
+            toolsGrid.scrollLeft = 0;
+            scrollAmount = 0;
+        }
+
+        requestAnimationFrame(scroll); // Boucle d'animation
+    }
+
+    scroll();
+}
+
+startScroll();
