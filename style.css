@@ -83,31 +83,6 @@ nav .nav-links a:hover {
     color: var(--primary-color);
 }
 
-.logo-button {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: var(--spacing-small) var(--spacing-medium);
-    background: var(--primary-color);
-    color: var(--text-light);
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    transition: background var(--transition-duration) ease;
-}
-
-.logo-button:hover {
-    background: var(--secondary-color);
-}
-
-/* Correction de la couleur du bouton LaFigue en mode sombre */
-body.dark-mode .logo-button {
-    background-color: #bb86fc; /* Couleur violette pour le mode sombre */
-    color: #121212; /* Texte sombre pour contraster */
-}
-
-body.dark-mode .logo-button:hover {
-    background-color: #9a67ea; /* Couleur violette plus claire au survol */
-}
-
 /* Section En-tête */
 .home {
     background: var(--background-light);
@@ -429,10 +404,6 @@ body.dark-mode {
     color: #ffffff; /* Texte clair */
 }
 
-body.dark-mode .service i {
-    color: #bb86fc; /* Couleur violette pour le mode sombre */
-}
-
 body.dark-mode a {
     color: #bb86fc; /* Liens violets en mode sombre */
 }
@@ -465,94 +436,9 @@ body.dark-mode .form-group textarea {
     color: #ffffff; /* Texte clair */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .home-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-image {
-        margin: var(--spacing-large) auto;
-    }
-
-    .services-grid,
-    .experience-grid,
-    .tools-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tool,
-    .project {
-        width: 100%;
-    }
-
-    .contact-wrapper {
-        flex-direction: column;
-    }
-
-    .contact-form {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .home-text h1 {
-        font-size: 2rem;
-    }
-
-    .btn {
-        width: 100%;
-        margin-bottom: var(--spacing-small);
-    }
-}
-
-/* Correction de la couleur de fond et du texte dans l'en-tête en mode sombre */
-body.dark-mode .home {
-    background-color: #f9f9f9; /* Fond clair pour l'en-tête */
-}
-
-body.dark-mode .home-text h1,
-body.dark-mode .home-text p {
-    color: #333; /* Texte noir pour un bon contraste */
-}
-
-/* Correction de la couleur de fond et du texte dans la section Outils en mode sombre */
-body.dark-mode .tools {
-    background-color: #f9f9f9; /* Fond clair pour la section Outils */
-}
-
-body.dark-mode .tools h2,
-body.dark-mode .tool h3,
-body.dark-mode .tool p {
-    color: #333; /* Texte noir pour un bon contraste */
-}
-
-:root {
-    /* Couleurs par défaut (mode clair) */
-    --primary-color: #007BFF; /* Bleu */
-    --secondary-color: #0056b3; /* Bleu foncé */
-    --background-light: #f9f9f9; /* Fond clair */
-    --background-dark: #333; /* Fond sombre */
-    --text-light: #fff; /* Texte clair */
-    --text-dark: #333; /* Texte sombre */
-
-    /* Polices */
-    --font-primary: 'Arial', sans-serif;
-    --font-secondary: 'Helvetica', sans-serif;
-
-    /* Espacements */
-    --spacing-small: 0.5rem;
-    --spacing-medium: 1rem;
-    --spacing-large: 2rem;
-
-    /* Bordures et ombres */
-    --border-radius: 10px;
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-    /* Transitions */
-    --transition-duration: 0.3s;
+/* Correction de la couleur des icônes en mode sombre */
+body.dark-mode .service i {
+    color: #bb86fc; /* Couleur violette pour les icônes en mode sombre */
 }
 
 /* Style du bouton Mode Sombre/Clair */
@@ -602,4 +488,103 @@ body.dark-mode #contact-form .btn {
 
 body.dark-mode #contact-form .btn:hover {
     background: #9a67ea; /* Violet plus clair en mode sombre */
+}
+
+/* Couleur des titres de section en mode clair */
+h2 {
+    color: var(--primary-color); /* Bleu */
+}
+
+/* Couleur des titres de section en mode sombre */
+body.dark-mode h2 {
+    color: #bb86fc; /* Violet */
+}
+
+/* Styles pour les boutons des titres de section */
+.section-title-button {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: var(--spacing-small) var(--spacing-medium);
+    background: var(--primary-color); /* Bleu par défaut */
+    color: var(--text-light); /* Texte clair par défaut */
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background var(--transition-duration) ease, color var(--transition-duration) ease;
+    margin-bottom: var(--spacing-large);
+    display: inline-block;
+}
+
+/* Styles pour les boutons en mode sombre */
+body.dark-mode .section-title-button {
+    background: #bb86fc; /* Violet en mode sombre */
+    color: #121212; /* Texte sombre pour contraster */
+}
+
+/* Styles pour les boutons en mode clair */
+body:not(.dark-mode) .section-title-button {
+    background: var(--primary-color); /* Bleu en mode clair */
+    color: var(--text-light); /* Texte clair en mode clair */
+}
+
+/* Bouton du logo LaFigue en mode clair */
+.logo-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: var(--spacing-small) var(--spacing-medium);
+    background: var(--primary-color); /* Bleu par défaut */
+    color: var(--text-light); /* Texte clair par défaut */
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background var(--transition-duration) ease;
+}
+
+.logo-button:hover {
+    background: var(--secondary-color); /* Bleu foncé au survol */
+}
+
+/* Bouton du logo LaFigue en mode sombre */
+body.dark-mode .logo-button {
+    background-color: #bb86fc; /* Violet en mode sombre */
+    color: #121212; /* Texte sombre pour contraster */
+}
+
+body.dark-mode .logo-button:hover {
+    background-color: #9a67ea; /* Violet plus clair au survol */
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+body.dark-mode .btn {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+/* Correction de la couleur de fond et du texte dans l'en-tête en mode sombre */
+body.dark-mode .home {
+    background-color: #f9f9f9;
+}
+
+body.dark-mode .home-text h1,
+body.dark-mode .home-text p {
+    color: #333;
+}
+
+/* Correction de la couleur de fond et du texte dans la section Outils en mode sombre */
+body.dark-mode .tools {
+    background-color: #f9f9f9;
+}
+
+body.dark-mode .tools h2,
+body.dark-mode .tool h3,
+body.dark-mode .tool p {
+    color: #333;
 }
