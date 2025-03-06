@@ -588,3 +588,36 @@ body.dark-mode .tool h3,
 body.dark-mode .tool p {
     color: #333;
 }
+
+
+
+.tools-wrapper {
+    overflow: hidden; /* Cache le défilement vertical */
+    width: 100%;
+}
+
+.tools-grid {
+    display: flex; /* Affiche les outils en ligne */
+    gap: 20px; /* Espace entre les outils */
+    width: max-content; /* Permet au contenu de dépasser la largeur du conteneur */
+    animation: scroll 20s linear infinite; /* Animation de défilement */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Départ à la position initiale */
+    }
+    100% {
+        transform: translateX(-50%); /* Défile jusqu'à la moitié du contenu */
+    }
+}
+
+.tool {
+    flex: 0 0 auto; /* Empêche les outils de rétrécir */
+    width: 250px; /* Largeur fixe pour chaque outil */
+    background: var(--text-light);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
