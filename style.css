@@ -528,3 +528,52 @@ body.dark-mode .tool h3,
 body.dark-mode .tool p {
     color: #333; /* Texte noir pour un bon contraste */
 }
+
+:root {
+    /* Couleurs par défaut (mode clair) */
+    --primary-color: #007BFF; /* Bleu */
+    --secondary-color: #0056b3; /* Bleu foncé */
+    --background-light: #f9f9f9; /* Fond clair */
+    --background-dark: #333; /* Fond sombre */
+    --text-light: #fff; /* Texte clair */
+    --text-dark: #333; /* Texte sombre */
+
+    /* Polices */
+    --font-primary: 'Arial', sans-serif;
+    --font-secondary: 'Helvetica', sans-serif;
+
+    /* Espacements */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+
+    /* Bordures et ombres */
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-duration: 0.3s;
+}
+
+/* Style du bouton Mode Sombre/Clair */
+#theme-toggle {
+    background-color: var(--primary-color); /* Bleu par défaut (Mode Sombre) */
+    color: var(--text-light);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+}
+
+/* Style du bouton en Mode Clair (violet) */
+body:not(.dark-mode) #theme-toggle {
+    background-color: #bb86fc; /* Violet en Mode Clair */
+    color: #121212; /* Texte sombre pour contraster */
+}
+
+/* Style du bouton en Mode Sombre (bleu) */
+body.dark-mode #theme-toggle {
+    background-color: var(--primary-color); /* Bleu en Mode Sombre */
+    color: var(--text-light); /* Texte clair pour contraster */
+}
