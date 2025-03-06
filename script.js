@@ -25,15 +25,26 @@ function toggleDarkMode() {
     const isDarkMode = body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDarkMode);
     themeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
+
+    // Appliquer la couleur du texte dynamique en fonction du mode
+    if (isDarkMode) {
+        dynamicText.classList.remove('dynamic-text-light');
+        dynamicText.classList.add('dynamic-text-dark');
+    } else {
+        dynamicText.classList.remove('dynamic-text-dark');
+        dynamicText.classList.add('dynamic-text-light');
+    }
 }
 
-// Appliquer le mode sombre au chargement de la page
+// Appliquer le mode sombre par défaut au chargement de la page
 const savedDarkMode = localStorage.getItem('darkMode');
 if (savedDarkMode === 'true') {
     body.classList.add('dark-mode');
     themeToggle.textContent = 'Mode Clair';
+    dynamicText.classList.add('dynamic-text-dark'); // Appliquer la couleur violette en mode sombre
 } else {
     themeToggle.textContent = 'Mode Sombre';
+    dynamicText.classList.add('dynamic-text-light'); // Appliquer la couleur bleue en mode clair
 }
 
 themeToggle.addEventListener('click', toggleDarkMode);
