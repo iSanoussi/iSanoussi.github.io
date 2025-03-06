@@ -577,3 +577,29 @@ body:not(.dark-mode) #theme-toggle {
     background-color: var(--primary-color); /* Bleu en mode clair */
     color: var(--text-light); /* Texte clair pour contraster */
 }
+
+/* Style du bouton "Envoyer le message" en mode clair */
+#contact-form .btn {
+    background: var(--primary-color); /* Bleu par défaut */
+    color: var(--text-light); /* Texte clair */
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background var(--transition-duration) ease;
+}
+
+/* Style du bouton "Envoyer le message" en mode sombre */
+body.dark-mode #contact-form .btn {
+    background: #bb86fc; /* Violet en mode sombre */
+    color: #121212; /* Texte sombre pour contraster */
+}
+
+/* Effet de survol du bouton */
+#contact-form .btn:hover {
+    background: var(--secondary-color); /* Bleu foncé en mode clair */
+}
+
+body.dark-mode #contact-form .btn:hover {
+    background: #9a67ea; /* Violet plus clair en mode sombre */
+}
