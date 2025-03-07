@@ -600,10 +600,11 @@ body.dark-mode .tool p {
     display: flex; /* Affiche les outils en ligne */
     gap: 20px; /* Espace entre les outils */
     width: max-content; /* Permet au contenu de dépasser la largeur du conteneur */
-    animation: scroll 20s linear infinite; /* Animation de défilement */
+    animation: scroll-left 25s linear infinite; /* Animation de défilement */
 }
 
-@keyframes scroll {
+/* Animation pour la section Outils (défilement vers la gauche) */
+@keyframes scroll-left {
     0% {
         transform: translateX(0); /* Départ à la position initiale */
     }
@@ -752,15 +753,16 @@ body.dark-mode .certification i {
     display: flex; /* Affiche les certifications en ligne */
     gap: 20px; /* Espace entre les certifications */
     width: max-content; /* Permet au contenu de dépasser la largeur du conteneur */
-    animation: scroll 30s linear infinite; /* Animation de défilement */
+    animation: scroll-right 25s linear infinite; /* Animation de défilement */
 }
 
-@keyframes scroll {
+/* Animation pour la section Certifications (défilement vers la droite) */
+@keyframes scroll-right {
     0% {
-        transform: translateX(0); /* Départ à la position initiale */
+        transform: translateX(-50%); /* Départ à la moitié du contenu */
     }
-    0% {
-        transform: translateX(-50%); /* Défile jusqu'à la moitié du contenu */
+    100% {
+        transform: translateX(0); /* Défile jusqu'à la position initiale */
     }
 }
 
