@@ -600,14 +600,14 @@ body.dark-mode .tool p {
     display: flex; /* Affiche les outils en ligne */
     gap: 20px; /* Espace entre les outils */
     width: max-content; /* Permet au contenu de dépasser la largeur du conteneur */
-    animation: scroll 30s linear infinite; /* Animation de défilement */
+    animation: scroll 20s linear infinite; /* Animation de défilement */
 }
 
 @keyframes scroll {
     0% {
         transform: translateX(0); /* Départ à la position initiale */
     }
-    0% {
+    100% {
         transform: translateX(-50%); /* Défile jusqu'à la moitié du contenu */
     }
 }
@@ -773,5 +773,3 @@ body.dark-mode .certification i {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
-
