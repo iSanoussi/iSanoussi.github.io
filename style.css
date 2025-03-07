@@ -811,3 +811,40 @@ body.dark-mode .certification i {
     font-size: 1rem;
     color: #555;
 }
+
+
+.certifications-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 0;
+    animation: scrollReverse 40s linear infinite;
+}
+
+@keyframes scrollReverse {
+    0% {
+        transform: translateX(0); /* Départ au début du contenu */
+    }
+    100% {
+        transform: translateX(-100%); /* Défile jusqu'à la fin du contenu */
+    }
+}
+
+.certification {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 300px; /* Largeur fixe pour chaque certification */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
