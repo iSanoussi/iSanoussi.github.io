@@ -607,7 +607,7 @@ body.dark-mode .tool p {
     0% {
         transform: translateX(0); /* Départ à la position initiale */
     }
-    100% {
+    0% {
         transform: translateX(-50%); /* Défile jusqu'à la moitié du contenu */
     }
 }
