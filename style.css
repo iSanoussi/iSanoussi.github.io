@@ -768,7 +768,7 @@ body.dark-mode .certification i {
 
 .certification {
     flex: 0 0 auto; /* Empêche les certifications de rétrécir */
-    width: 250px; /* Largeur fixe pour chaque certification */
+    width: 200px; /* Largeur fixe pour chaque certification */
     background: var(--text-light);
     padding: 20px;
     border-radius: 10px;
