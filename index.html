@@ -254,23 +254,11 @@
     .kpi-panel{order:-1;}
   }
 
-  /* ---------- STARFIELD (hero background) ---------- */
-  .stars-layer{
+  /* ---------- CONSTELLATION CANVAS ---------- */
+  .constellation-canvas{
     position:absolute;inset:0;
-    border-radius:50%;
+    width:100%;height:100%;
     pointer-events:none;
-  }
-  .stars-small{
-    width:1px;height:1px;
-    animation:twinkle 5s ease-in-out infinite;
-  }
-  .stars-big{
-    width:2px;height:2px;
-    animation:twinkle 7s ease-in-out infinite 1.2s;
-  }
-  @keyframes twinkle{
-    0%,100%{opacity:.35;}
-    50%{opacity:1;}
   }
 
   /* ---------- ABOUT / FIGURE BOX ---------- */
@@ -589,12 +577,13 @@
   }
 
   /* ---------- CONTACT ---------- */
-  .contact{background:var(--navy-950);color:var(--paper);}
+  .contact{background:var(--navy-950);color:var(--paper);position:relative;overflow:hidden;}
   .contact-grid{
     display:grid;
     grid-template-columns:0.75fr 0.85fr 1.1fr;
     gap:48px;
     align-items:center;
+    position:relative;
   }
   .contact-portrait{display:flex;justify-content:center;}
   .contact-portrait-card{
@@ -829,8 +818,7 @@
 
   <!-- HERO -->
   <section class="hero" style="padding-top:168px;">
-    <div class="stars-layer stars-small" id="starsSmall"></div>
-    <div class="stars-layer stars-big" id="starsBig"></div>
+    <canvas class="constellation-canvas" id="constellationHero"></canvas>
     <div class="wrap">
       <div class="hero-grid">
         <div>
@@ -873,7 +861,7 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="stars-layer stars-small" id="starsSmallAbout"></div>
+    <canvas class="constellation-canvas" id="constellationAbout"></canvas>
     <div class="wrap">
       <div class="about-grid">
         <div class="about-copy reveal">
@@ -1266,6 +1254,7 @@
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
+    <canvas class="constellation-canvas" id="constellationContact"></canvas>
     <div class="wrap">
       <div class="contact-grid">
         <div class="contact-portrait reveal">
@@ -1308,8 +1297,9 @@
 
 <!-- REACH -->
 <section class="reach">
+  <canvas class="constellation-canvas" id="constellationReach"></canvas>
   <div class="wrap">
-    <div class="reach-inner">
+    <div class="reach-inner" style="position:relative;">
       <div class="reach-head reveal">
         <div class="eyebrow" style="color:var(--gold-soft);">Portée</div>
         <h2>D'où viennent <em>mes visiteurs</em>.</h2>
@@ -1363,22 +1353,150 @@
   }, { threshold: 0.4 });
   kpiEls.forEach(el => kpiIo.observe(el));
 
-  // starfield generator
-  function paintStars(el, count, color){
-    if(!el) return;
-    const w = 1600, h = 900;
-    let shadows = [];
-    for(let i=0;i<count;i++){
-      const x = Math.round(Math.random()*w);
-      const y = Math.round(Math.random()*h);
-      shadows.push(`${x}px ${y}px ${color}`);
+  // constellation background — animated network with mouse interaction
+  function initConstellation(canvas, options){
+    if(!canvas) return;
+    const section = canvas.closest('section');
+    const ctx = canvas.getContext('2d');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const opts = Object.assign({
+      density: 9000,       // px² per particle
+      maxParticles: 90,
+      linkDist: 130,
+      mouseDist: 160,
+      lineColor: '217,199,154',
+      dotColor: '243,242,237',
+      mouseColor: '217,163,74',
+      speed: 0.18
+    }, options);
+
+    let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let particles = [];
+    let mouse = { x: -9999, y: -9999, active: false };
+    let running = false;
+    let rafId = null;
+
+    function resize(){
+      const rect = section.getBoundingClientRect();
+      w = rect.width; h = rect.height;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const count = Math.min(opts.maxParticles, Math.max(18, Math.round((w * h) / opts.density)));
+      particles = Array.from({length: count}, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * opts.speed,
+        vy: (Math.random() - 0.5) * opts.speed,
+        r: Math.random() < 0.15 ? 2 : 1.1
+      }));
     }
-    el.style.boxShadow = shadows.join(',');
-    el.style.background = 'transparent';
+
+    function step(){
+      if(!running) return;
+      ctx.clearRect(0, 0, w, h);
+
+      // update + draw particles
+      for(const p of particles){
+        p.x += p.vx; p.y += p.vy;
+        if(p.x < 0 || p.x > w) p.vx *= -1;
+        if(p.y < 0 || p.y > h) p.vy *= -1;
+        p.x = Math.max(0, Math.min(w, p.x));
+        p.y = Math.max(0, Math.min(h, p.y));
+      }
+
+      // particle-particle links
+      for(let i = 0; i < particles.length; i++){
+        for(let j = i + 1; j < particles.length; j++){
+          const a = particles[i], b = particles[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if(dist < opts.linkDist){
+            const alpha = (1 - dist / opts.linkDist) * 0.35;
+            ctx.strokeStyle = `rgba(${opts.lineColor},${alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // mouse links
+      if(mouse.active){
+        for(const p of particles){
+          const dx = p.x - mouse.x, dy = p.y - mouse.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if(dist < opts.mouseDist){
+            const alpha = (1 - dist / opts.mouseDist) * 0.85;
+            ctx.strokeStyle = `rgba(${opts.mouseColor},${alpha})`;
+            ctx.lineWidth = 1.1;
+            ctx.beginPath();
+            ctx.moveTo(mouse.x, mouse.y);
+            ctx.lineTo(p.x, p.y);
+            ctx.stroke();
+          }
+        }
+        ctx.fillStyle = `rgba(${opts.mouseColor},0.95)`;
+        ctx.beginPath();
+        ctx.arc(mouse.x, mouse.y, 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // dots
+      ctx.fillStyle = `rgba(${opts.dotColor},0.9)`;
+      for(const p of particles){
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      rafId = requestAnimationFrame(step);
+    }
+
+    function start(){
+      if(running) return;
+      running = true;
+      rafId = requestAnimationFrame(step);
+    }
+    function stop(){
+      running = false;
+      if(rafId) cancelAnimationFrame(rafId);
+    }
+
+    resize();
+    if(prefersReduced){
+      // draw a single static frame, no animation loop
+      running = true; step(); running = false;
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { e.isIntersecting ? start() : stop(); });
+      }, { threshold: 0.01 });
+      io.observe(section);
+
+      section.addEventListener('mousemove', (e) => {
+        const rect = section.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+        mouse.active = true;
+      });
+      section.addEventListener('mouseleave', () => { mouse.active = false; });
+
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resize, 200);
+      });
+    }
   }
-  paintStars(document.getElementById('starsSmall'), 140, 'rgba(243,242,237,0.8)');
-  paintStars(document.getElementById('starsBig'), 45, 'rgba(217,199,154,0.9)');
-  paintStars(document.getElementById('starsSmallAbout'), 90, 'rgba(243,242,237,0.5)');
+
+  initConstellation(document.getElementById('constellationHero'));
+  initConstellation(document.getElementById('constellationAbout'), { maxParticles: 55, density: 11000 });
+  initConstellation(document.getElementById('constellationContact'), { maxParticles: 55, density: 11000 });
+  initConstellation(document.getElementById('constellationReach'), { maxParticles: 45, density: 12000 });
 
   // mobile nav
   const navToggle = document.getElementById('navToggle');
