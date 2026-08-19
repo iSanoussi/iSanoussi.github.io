@@ -683,6 +683,58 @@
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
   .reveal.in{opacity:1;transform:translateY(0);}
 
+  /* ---------- REACH MAP ---------- */
+  .reach{background:var(--navy-950);color:var(--paper);padding:104px 0;position:relative;overflow:hidden;}
+  .reach::before{
+    content:'';
+    position:absolute;top:-40%;left:-8%;
+    width:520px;height:520px;
+    border:1px solid var(--line-dark);
+    border-radius:50%;
+  }
+  .reach-inner{position:relative;}
+  .reach-head{
+    margin-bottom:44px;
+    border-bottom:1px solid var(--line-dark);
+    padding-bottom:28px;
+  }
+  .reach-head .eyebrow{margin-bottom:20px;}
+  .reach-head h2{
+    font-family:var(--serif);font-weight:500;
+    font-size:clamp(28px,3.4vw,40px);
+    line-height:1.1;
+    margin-bottom:14px;
+  }
+  .reach-head h2 em{font-style:italic;font-weight:400;color:var(--gold-soft);}
+  .reach-head p{color:#C6CDD6;font-size:15px;max-width:420px;line-height:1.7;}
+  .reach-card{
+    background:var(--paper);
+    border:1px solid rgba(217,199,154,0.3);
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 30px 70px -25px rgba(0,0,0,0.65);
+    overflow:hidden;
+  }
+  .reach-map{
+    min-height:140px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .reach-map img, .reach-map iframe{width:100%;display:block;border:none;}
+  .reach-placeholder{
+    width:100%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:14px;
+    padding:36px 20px;
+    text-align:center;
+  }
+  .reach-placeholder svg{width:180px;height:auto;opacity:0.8;}
+  .reach-placeholder span{
+    font-family:var(--mono);font-size:12px;letter-spacing:0.04em;
+    color:var(--slate-600);
+    max-width:320px;
+    line-height:1.6;
+  }
+
   /* ---------- MOBILE REFINEMENTS ---------- */
   @media (max-width:600px){
     .wrap{padding:0 20px;}
@@ -731,6 +783,12 @@
     .contact-grid{gap:28px;}
     .contact-portrait-card{max-width:220px;margin:0 auto;}
     .contact p{font-size:14.5px;}
+
+    .reach{padding:64px 0;}
+    .reach-head{grid-template-columns:1fr;gap:16px;margin-bottom:32px;padding-bottom:20px;}
+    .reach-head p{font-size:14px;}
+    .reach-card{padding:14px;}
+    .reach-placeholder svg{width:140px;}
 
     footer{padding:22px 0;}
     .footer-row{flex-direction:column;align-items:flex-start;gap:8px;font-size:12px;}
@@ -878,7 +936,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <h2>Ce que je peux faire<br>pour votre équipe.</h2>
-        <p>Trois façons dont j'aide les équipes financières et opérationnelles à mieux décider, plus vite.</p>
+        <p>Six façons dont j'aide les équipes financières, produit et tech à mieux décider, produire et monter en compétences.</p>
       </div>
 
       <div class="services-grid reveal">
@@ -932,6 +990,48 @@
           <div class="service-index">03</div>
           <h3>Automatisation des processus</h3>
           <p>Automatisation des tâches répétitives via Python et Alteryx, pour redonner du temps aux équipes.</p>
+        </div>
+        <div class="service">
+          <div class="service-illu"><svg viewBox="0 0 200 120" fill="none">
+            <rect x="40" y="20" width="120" height="80" rx="4" stroke="var(--navy-800)" stroke-width="1.4"/>
+            <line x1="40" y1="38" x2="160" y2="38" stroke="var(--navy-800)" stroke-width="1.4"/>
+            <circle cx="50" cy="29" r="2.4" fill="var(--navy-800)" opacity="0.4"/>
+            <circle cx="58" cy="29" r="2.4" fill="var(--navy-800)" opacity="0.4"/>
+            <circle cx="66" cy="29" r="2.4" fill="var(--gold)"/>
+            <path d="M75 55 L62 68 L75 81" stroke="var(--gold)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M125 55 L138 68 L125 81" stroke="var(--gold)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="108" y1="50" x2="96" y2="86" stroke="var(--navy-800)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          </svg></div>
+          <div class="service-index">04</div>
+          <h3>Développement applicatif</h3>
+          <p>Conception et développement d'applications et de SaaS sur mesure — du prototypage rapide (vibe coding) au déploiement, en C#, Java et Python.</p>
+        </div>
+        <div class="service">
+          <div class="service-illu"><svg viewBox="0 0 200 120" fill="none">
+            <path d="M100 35 C90 25 65 22 50 26 L50 85 C65 81 90 84 100 94" stroke="var(--navy-800)" stroke-width="1.4" fill="var(--paper-dim)"/>
+            <path d="M100 35 C110 25 135 22 150 26 L150 85 C135 81 110 84 100 94" stroke="var(--navy-800)" stroke-width="1.4" fill="var(--paper-dim)"/>
+            <line x1="100" y1="35" x2="100" y2="94" stroke="var(--navy-800)" stroke-width="1.2" opacity="0.4"/>
+            <circle cx="100" cy="20" r="3" fill="var(--gold)"/>
+            <line x1="60" y1="42" x2="88" y2="40" stroke="var(--slate-600)" stroke-width="1.2" opacity="0.5"/>
+            <line x1="60" y1="52" x2="88" y2="50" stroke="var(--slate-600)" stroke-width="1.2" opacity="0.5"/>
+            <line x1="112" y1="40" x2="140" y2="42" stroke="var(--slate-600)" stroke-width="1.2" opacity="0.5"/>
+            <line x1="112" y1="50" x2="140" y2="52" stroke="var(--slate-600)" stroke-width="1.2" opacity="0.5"/>
+          </svg></div>
+          <div class="service-index">05</div>
+          <h3>Formation</h3>
+          <p>Formations sur mesure pour monter en compétences vos équipes sur l'analyse de données, les outils BI et les bonnes pratiques data.</p>
+        </div>
+        <div class="service">
+          <div class="service-illu"><svg viewBox="0 0 200 120" fill="none">
+            <circle cx="100" cy="60" r="34" stroke="var(--navy-800)" stroke-width="1.4"/>
+            <circle cx="100" cy="60" r="20" stroke="var(--navy-800)" stroke-width="1.2" opacity="0.5"/>
+            <circle cx="100" cy="60" r="4" fill="var(--gold)"/>
+            <path d="M100 60 L124 38" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M118 36 L124 38 L122 44" stroke="var(--gold)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg></div>
+          <div class="service-index">06</div>
+          <h3>Coaching</h3>
+          <p>Accompagnement individuel pour progresser dans votre parcours data ou tech : montée en compétences, structuration de projets, préparation d'entretiens.</p>
         </div>
       </div>
     </div>
@@ -1074,7 +1174,7 @@
             <div class="project-num">Projet 01</div>
             <h3>Tableau de bord Power BI</h3>
             <p>Création d'un tableau de bord dynamique pour la visualisation des KPI financiers.</p>
-            <a href="https://management-datascience.org/articles/19445/" class="project-link" target="_blank" rel="noopener">Voir le projet →</a>
+            <a href="projets/projet-01.html" class="project-link">Voir le projet →</a>
           </div>
         </div>
         <div class="project">
@@ -1086,7 +1186,7 @@
             <div class="project-num">Projet 02</div>
             <h3>Automatisation des rapports</h3>
             <p>Automatisation des rapports mensuels à l'aide de Python et Google Cloud.</p>
-            <a href="#" class="project-link">Voir le projet →</a>
+            <a href="projets/projet-02.html" class="project-link">Voir le projet →</a>
           </div>
         </div>
         <div class="project">
@@ -1098,7 +1198,7 @@
             <div class="project-num">Projet 03</div>
             <h3>Migration et modélisation de données</h3>
             <p>Migration des données et modélisation des processus pour des clients de LaFigue.</p>
-            <a href="#" class="project-link">Voir le projet →</a>
+            <a href="projets/projet-03.html" class="project-link">Voir le projet →</a>
           </div>
         </div>
         <div class="project">
@@ -1110,7 +1210,7 @@
             <div class="project-num">Projet 04</div>
             <h3>Analyse prédictive des risques</h3>
             <p>Développement d'un modèle prédictif pour l'analyse des risques de crédit.</p>
-            <a href="#" class="project-link">Voir le projet →</a>
+            <a href="projets/projet-04.html" class="project-link">Voir le projet →</a>
           </div>
         </div>
         <div class="project">
@@ -1122,7 +1222,7 @@
             <div class="project-num">Projet 05</div>
             <h3>Analyse prédictive en finance</h3>
             <p>Panorama des cas d'usage de l'analyse prédictive appliqués à la finance : trésorerie, fraude, risque de crédit, BFR.</p>
-            <a href="#" class="project-link">Voir le projet →</a>
+            <a href="projets/projet-05.html" class="project-link">Voir le projet →</a>
           </div>
         </div>
         <div class="project">
@@ -1134,7 +1234,7 @@
             <div class="project-num">Projet 06</div>
             <h3>Maturité de l'analytique de données</h3>
             <p>Cadre de lecture des 4 niveaux d'analyse — descriptive, diagnostique, prédictive, prescriptive — utilisé pour cadrer les missions clients.</p>
-            <a href="#" class="project-link">Voir le projet →</a>
+            <a href="projets/projet-06.html" class="project-link">Voir le projet →</a>
           </div>
         </div>
       </div>
@@ -1205,6 +1305,30 @@
   </section>
 
 </main>
+
+<!-- REACH -->
+<section class="reach">
+  <div class="wrap">
+    <div class="reach-inner">
+      <div class="reach-head reveal">
+        <div class="eyebrow" style="color:var(--gold-soft);">Portée</div>
+        <h2>D'où viennent <em>mes visiteurs</em>.</h2>
+        <p>Carte des visites du site, mise à jour automatiquement — pays par pays, sur les 30 derniers jours.</p>
+      </div>
+
+      <div class="reach-card reveal">
+        <div class="reach-map">
+          <!--
+            ClustrMaps : remplacez YOUR_MAP_ID par l'identifiant fourni après inscription
+            gratuite sur https://clustrmaps.com (Add your site → copiez le script d'intégration).
+            Une fois le script actif, vous pouvez supprimer le <div class="reach-placeholder">…</div> ci-dessous.
+          -->
+          <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YOUR_MAP_ID&t=n"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap footer-row">
